@@ -5,7 +5,7 @@ const greet = `{
     title: "Updating my blog",
     text: "It's my second blog post!",
     published_at: new Date("2020-10-26"),
-  }`;
+}`;
 
   return new Response(greet)
 }
