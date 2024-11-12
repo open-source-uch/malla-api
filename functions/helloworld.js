@@ -1,6 +1,6 @@
 export function onRequest(context) {
 
-const = greet `{
+let greet: string `{
     id: 2,
     title: "Updating my blog",
     text: "It's my second blog post! I'm still writing and publishing using Cloudflare Workers + Pages :)",
