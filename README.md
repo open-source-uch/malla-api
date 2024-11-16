@@ -2,11 +2,59 @@
 
 Unofficial API para mallas de cursos en Beauchef.
 
+## API
+
+La dirección oficial:
+```
+https://malla-api.uch.osec.cl
+```
+
+### Datos de Malla API
+
+* `/fcfm`
+  * Información sobre la API.
+
+* `/fcfm/vX.Y.Z/xattr_table`
+   * Tabla de atributos extendidos.
+
+* `/fcfm/vX.Y.Z/mallas`
+  * Listado de mallas oficiales.
+
+### Malla Plan Común
+
+* `/fcfm/vX.Y.Z/mallas/pc
+  * Listado de versiones de Malla Plan Común.
+
+* `/fcfm/vX.Y.Z/mallas/pc/vA`
+  * Versión A de Malla Plan Común.
+
+* `/fcfm/vX.Y.Z/mallas/pc/vA/stub`
+  * Grafo desconectado de todas las carreras.
+
+* `/fcfm/vX.Y.Z/mallas/pc/vA/full`
+  * Grafo conectado a todas las carreras.
+
+* `/fcfm/vX.Y.Z/mallas/pc/vA/<grafo>/n`
+  * Cursos del semestre *n*.
+
+### Malla Carrera
+
+* `/fcfm/vX.Y.Z/mallas/<carrera>`
+  * Listado de versions de Malla *<carrera>*.
+
+* `/fcfm/vX.Y.Z/mallas/<carrera>/vA`
+  * Versión A de Malla *<carrera>*.
+
+* `/fcfm/vX.Y.Z/mallas/<carrera>/vA/n`
+  * Cursos del semestre *n*.
+
+Lista los recursos a las mallas oficiales.
+
 ## Devel
 
 ### Bloque de curso
 
-Este es curso con todos sus atributos contenidos en el bloque.
+Contiene todos sus atributos.
 
 ```
 {
@@ -23,11 +71,11 @@ Este es curso con todos sus atributos contenidos en el bloque.
 
 ### Bloque de meta-curso
 
-Este es un meta curso con atributos extendidos en otro bloque.
+Tiene atributos extendidos.
 
 ```
 {
-  "code": "XA0010",
+  "code": "XA0011",
   "name": "Formación Integral",
   "credits": 3,
   "requires": [],
@@ -35,33 +83,33 @@ Este es un meta curso con atributos extendidos en otro bloque.
 }
 ```
 
+Desglozando XA0011 se tiene:
+
+* **XA:** El curso debe buscarse en *xattr_table*
+* **00:** El atributo a revisar
+* **11:** El curso con atributos extendidos
+
 ```
-{ 
-  "XA0010": {
-    "dept": [
-      "DR",
-      "EH",
-      "FG",
-      "EI",
-      "FT"
-    ],
-    "courses": []
+"00": {
+  "10": {
+    ...
+  },
+  "11": {
+  "name_array": [ "Formación Integral" ],
+  "dept_array": [ "DR", "EH", "FG", "EI", "FT"],
+  "courses_array": []
+  },
+  "12": {
+    ...
+   }
 }
 ```
 
-#### Nomenclatura de atributos extendidos
+### Nomenclatura de xattr_table
 
 > **XA 00 10**
 
-La primera tupla indica una búsqueda en la tabla de atributos extendidos:
-
-```
-/fcfm/<ver-api>/xattr_table
-```
-
-La segunda tupla indica el departamento:
-
-> Cualquier requisito extraño es mapeado aquí:
+Capa de compatibilidad con las mallas, permite crear bloques personalizados en el front-end.
 
 * `XA 00` -> Wildcard
   * `XA 00 10` -> Formación Integral
@@ -74,19 +122,14 @@ La segunda tupla indica el departamento:
     * `XA 00 23` -> Electivo de Línea de Especialización (DIE, DIM)
     * `XA 00 24` -> Especialización (DII)
   * `XA 00 30` -> Equivalencias
-    * `XA 00 31` -> 
-    * `XA 00 32` ->
-    * `XA 00 33` ->
-    * `XA 00 34` ->
-    * `XA 00 35` ->
-    * `XA 00 36` ->
+    * `XA 00 31` -> Termodinámica / Termodinámica Química
+    * `XA 00 32` -> `XA 05 01`
+    * ...
 * `XA 01` -> Requisitos de créditos (Base-36)
   * `XA 01 1C` ->  40 créditos aprobados
   * `XA 01 7I` -> 270 créditos aprobados
 
-> Capa de compatibilidad con U-Campus aquí:
-
-> Los códigos de dos letras no son únicos !!
+Capa de compatibilidad con U-Campus, permite crear cursos arbitrarios y vincularlos a un departamento.
 
 * `XA 03` | AS - Departamento de Astronomía 
 * `XA 05` | CC - Departamento de Ciencias de la Computación
@@ -105,7 +148,7 @@ La segunda tupla indica el departamento:
 * `XA 13` | FI - Departamento de Física
 * `XA 15` | GF - Departamento de Geofísica
   * `XA 15 01` => Probabilidades y Estadísticas / Probabilidades
-  * `XA 15 02` => Optimización / Modelamiento y Optimización
+  * `XA 06 01` => (Son lo mismo)
 * `XA 16` | GL - Departamento de Geología
 * `XA 19` | IN - Departamento de Ingeniería Industrial
 * `XA 21` | MA - Departamento de Ingeniería Matemática
@@ -115,24 +158,20 @@ La segunda tupla indica el departamento:
   * `XA 06 01` => (Son lo mismo)
 * `XA 24` | MT - Doctorado en Ciencia de los Materiales
 
-> Los siguientes códigos no son válidos en U-Campus:
-
-> Se utilizan para mantener la estructura de la API !!
+Adaptador entre Malla API y U-Campus:
 
 * `XA 25` | BT - Pseudo-departamento de Biolotecnología (Null code)
-* `XA 26` | IQ - Pseudo-departamento de Química (Legacy code)
-* `XA 27` | CM - Pseudo-departamento de Ciencias de los Materiales (Stolen code from old 12/ES)
+* `XA 26` | IQ - Pseudo-departamento de Química (Legacy code from Química Básica)
+* `XA 27` | CM - Pseudo-departamento de Ciencias de los Materiales (Old code for 12/ES)
 
-> Los siguientes códigos son especiales en U-Campus:
+Departamentos especiales de U-Campus donde guarda cursos.
 
-> En particular `307` y `12060002` aparecen en las mallas.
+> Malla API no tiene definido cómo manejarlos (sólo 307/QB).
 
 * `XA 303` | EP -> Escuela de Postgrado 
-* `XA 305` | ED -> Doctorado en Ingeniería Eléctrica 
+* `XA 305` | ED -> Doctorado en Ingeniería Eléctrica
 * `XA 306` | CM -> Departamento de Ciencia de los Materiales
 * `XA 307` | QB -> Departamento de Ingeniería Química y Biotecnología
 * `XA 310` | FG -> Plataforma
 * `XA 12060002` | EI -> Área de Ingeniería e Innovación 
 * `XA 12060003` | AA -> Área para el Aprendizaje de la Ingeniería y Ciencias A2IC
-
-> TO-DO: Vincular la tercera tupla al semestre, no que sea secuencial.
