@@ -1,0 +1,70 @@
+export function onRequest(context) {
+
+const data = `{
+  "metadata": {
+    "name": "IV Semestre",
+    "season": "Primavera"
+  },
+  "courses": [
+    {
+      "code": "MA2002",
+      "name": "Cálculo Avanzado y Aplicaciones",
+      "credits": 6,
+      "requires": [
+        "MA2001",
+        "MA2601"
+      ],
+      "unlocks": []
+    },
+    {
+      "code": "IN2201",
+      "name": "Economía",
+      "credits": 6,
+      "requires": [
+        "MA2001"
+      ],
+      "unlocks": []
+    },
+    {
+      "code": "FI2002",
+      "name": "Electromagnetismo",
+      "credits": 6,
+      "requires": [
+        "MA2001",
+        "MA2601",
+        "FI2003"
+      ],
+      "unlocks": []
+    },
+    {
+      "code": "XA0031",
+      "name": "Termodinámica / Termodinámica Química",
+      "credits": 6,
+      "requires": [
+        "IQ2211",
+        "FI2001",
+        "MA2001"
+      ],
+      "unlocks": []
+    },
+    {
+      "code": "CD2201",
+      "name": "Módulo Interdisciplinario",
+      "credits": 3,
+      "requires": [
+        "CD1201"
+      ],
+      "unlocks": []
+    },
+    {
+      "code": "XA0010",
+      "name": "Formación Integral",
+      "credits": 3,
+      "requires": [],
+      "unlocks": []
+    }
+  ]
+}`;
+
+  return new Response(data)
+}
