@@ -86,7 +86,7 @@ Tiene atributos extendidos.
 Desglozando XA0011 se tiene:
 
 * **XA:** El curso debe buscarse en *xattr_table*
-* **00:** El atributo a revisar
+* **00:** El departamento (real o ficticio)
 * **11:** Los atributos extendidos del curso
 
 ```
@@ -151,7 +151,7 @@ Desglozando XA0011 se tiene:
   * `XA 06 01` => (Son lo mismo)
 * `XA 24` | MT - Doctorado en Ciencia de los Materiales
 
-Adaptador entre Malla API y U-Campus:
+**Adaptador entre Malla API y U-Campus:**
 
 * `XA 25` | BT - Pseudo-departamento de Biolotecnología (Null code)
 * `XA 26` | IQ - Pseudo-departamento de Química (Legacy code from Química Básica)
