@@ -22,7 +22,7 @@ https://malla-api.uch.osec.cl
 
 ### Malla Plan Común
 
-* `/fcfm/vX.Y.Z/mallas/pc
+* `/fcfm/vX.Y.Z/mallas/pc`
   * Listado de versiones de Malla Plan Común.
 
 * `/fcfm/vX.Y.Z/mallas/pc/vA`
@@ -87,29 +87,22 @@ Desglozando XA0011 se tiene:
 
 * **XA:** El curso debe buscarse en *xattr_table*
 * **00:** El atributo a revisar
-* **11:** El curso con atributos extendidos
+* **11:** Los atributos extendidos del curso
 
 ```
-"00": {
-  "10": {
-    ...
-  },
+}
   "11": {
   "name_array": [ "Formación Integral" ],
   "dept_array": [ "DR", "EH", "FG", "EI", "FT"],
   "courses_array": []
-  },
-  "12": {
-    ...
-   }
 }
 ```
 
 ### Nomenclatura de xattr_table
 
-> **XA 00 10**
+> *XA 00 10*
 
-Capa de compatibilidad con las mallas, permite crear bloques personalizados en el front-end.
+**Capa de compatibilidad con las mallas, permite imitar los bloques de la malla en el front-end.**
 
 * `XA 00` -> Wildcard
   * `XA 00 10` -> Formación Integral
@@ -129,7 +122,7 @@ Capa de compatibilidad con las mallas, permite crear bloques personalizados en e
   * `XA 01 1C` ->  40 créditos aprobados
   * `XA 01 7I` -> 270 créditos aprobados
 
-Capa de compatibilidad con U-Campus, permite crear cursos arbitrarios y vincularlos a un departamento.
+**Capa de compatibilidad con U-Campus, permite crear cursos arbitrarios y vincularlos a un departamento.**
 
 * `XA 03` | AS - Departamento de Astronomía 
 * `XA 05` | CC - Departamento de Ciencias de la Computación
@@ -164,7 +157,7 @@ Adaptador entre Malla API y U-Campus:
 * `XA 26` | IQ - Pseudo-departamento de Química (Legacy code from Química Básica)
 * `XA 27` | CM - Pseudo-departamento de Ciencias de los Materiales (Old code for 12/ES)
 
-Departamentos especiales de U-Campus donde guarda cursos.
+**Departamentos especiales de U-Campus donde guarda cursos.**
 
 > Malla API no tiene definido cómo manejarlos (sólo 307/QB).
 
