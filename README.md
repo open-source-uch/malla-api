@@ -25,30 +25,34 @@ https://malla-api.uch.osec.cl
 * `/fcfm/vX.Y.Z/mallas/pc`
   * Listado de versiones de Malla Plan Común.
 
-* `/fcfm/vX.Y.Z/mallas/pc/vA`
-  * Versión A de Malla Plan Común.
-
-* `/fcfm/vX.Y.Z/mallas/pc/vA/stub`
-  * Grafo desconectado de todas las carreras.
-
-* `/fcfm/vX.Y.Z/mallas/pc/vA/full`
-  * Grafo conectado a todas las carreras.
-
-* `/fcfm/vX.Y.Z/mallas/pc/vA/<grafo>/n`
-  * Cursos del semestre *n*.
+* `/fcfm/vX.Y.Z/mallas/pc/<ver>/<graf>/<sem>`
+  * `<ver>` es la versión de la malla.
+    * `v3` para 2007-2018 (WIP).
+    * `v5` para 2019-today.
+  * `<graf>` son las relaciones con las carreras:
+    * `stub` no tiene *unlocks* de carreras.
+    * `full` tiene *unlocks* de todas las carreras.
+  * `<sem>` es el número del semestre.
+    * Parten desde el número 1.
+    * Contiene el listado de cursos.
 
 ### Malla Carrera
 
-* `/fcfm/vX.Y.Z/mallas/<carrera>`
-  * Listado de versions de Malla *<carrera>*.
+* `/fcfm/vX.Y.Z/mallas/<major>`
+  * Listado de versions de Malla *<major>*.
 
-* `/fcfm/vX.Y.Z/mallas/<carrera>/vA`
-  * Versión A de Malla *<carrera>*.
-
-* `/fcfm/vX.Y.Z/mallas/<carrera>/vA/n`
-  * Cursos del semestre *n*.
-
-Lista los recursos a las mallas oficiales.
+* `/fcfm/vX.Y.Z/mallas/<major>/<ver>/<degree>/<sem>`
+  * `<major>` es la sigla de la carrera.
+  * `<ver>` es la versión de la malla.
+    * `v5` para 2007-2018 (WIP).
+    * `v7` para 2019-today.
+  * `<degree>` es el título que emite la facultad.
+    * `licenciatura` para los primeros 4 semestres.
+    * `especialidad` para el resto de los semestres.
+  * `<sem>` es el número del semestre.
+    * Parten desde el número 1.
+    * Contiene el listado de cursos.
+    * No considera Plan Común.
 
 ## Devel
 
