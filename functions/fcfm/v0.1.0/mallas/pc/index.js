@@ -11,7 +11,7 @@ const data = `{
       "semesters": 4,
       "degrees": []
     },
-    "v7": {
+    "v5": {
       "semesters": 4,
       "degrees": []
     }
