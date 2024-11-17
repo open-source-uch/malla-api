@@ -31,7 +31,7 @@ https://malla-api.uch.osec.cl
     * `v5` para 2019-today.
   * `<graf>` son las relaciones con las carreras:
     * `stub` no tiene *unlocks* de carreras.
-    * `full` tiene *unlocks* de todas las carreras.
+    * `full` tiene *unlocks* de todas las carreras (WIP).
   * `<sem>` es el número del semestre.
     * Parten desde el número 1.
     * Contiene el listado de cursos.
@@ -43,6 +43,8 @@ https://malla-api.uch.osec.cl
 
 * `/fcfm/vX.Y.Z/mallas/<major>/<ver>/<degree>/<sem>`
   * `<major>` es la sigla de la carrera.
+    * `dcc` para Ingeniería Civil en Computación.
+    * ... WIP el resto de las carreras.
   * `<ver>` es la versión de la malla.
     * `v5` para 2007-2018 (WIP).
     * `v7` para 2019-today.
