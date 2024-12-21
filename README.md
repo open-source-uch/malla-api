@@ -44,6 +44,7 @@ https://malla-api.uch.osec.cl
 * `/fcfm/vX.Y.Z/mallas/<major>/<ver>/<degree>/<sem>`
   * `<major>` es la sigla de la carrera.
     * `dcc` para Ingeniería Civil en Computación.
+    * `dimec` para Ingeniería Civil Mecánica
     * ... WIP el resto de las carreras.
   * `<ver>` es la versión de la malla.
     * `v1` para ????-2000 (WIP).
