@@ -2,8 +2,8 @@ export function onRequest(context) {
 
 const data = `{
   "metadata": {
-    "name": "Ingeniería Civil en Computación",
-    "site": "https://www.dcc.uchile.cl/pregrado/malla",
+    "name": "Ingeniería Civil Mecánica",
+    "site": "https://dimec.uchile.cl/app/ingenieria-civil-mecanica/plan-de-estudios/",
     "comment": "It's a really informative website, worth checking."
   },
   "version": {

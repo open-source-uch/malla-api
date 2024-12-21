@@ -21,12 +21,12 @@ const data = `{
           "courses_array": []
         },
         "11": {
-          "name_array": [ "Formación Integral" ],
+          "name_array": [ "Formación Integral Plan Común" ],
           "dept_array": [ "DR", "EH", "FG", "EI", "FT"],
           "courses_array": []
         },
         "12": {
-          "name_array": [ "Formación Integral" ],
+          "name_array": [ "Formación Integral Licenciatura" ],
           "dept_array": [ "EH", "FG" ],
           "courses_array": []
         },
@@ -46,7 +46,7 @@ const data = `{
           "courses_array": []
         },
         "22": {
-          "name_array": [ "Electivos Especialidad" ],
+          "name_array": [ "Electivo Especialidad" ],
           "dept_array": [],
           "courses_array": []
         },
@@ -61,7 +61,7 @@ const data = `{
           "courses_array": []
         },
         "30": {
-          "name_array": [ "Equivalencias" ],
+          "name_array": [ "Equivalencia de desbloqueos" ],
           "dept_array": [],
           "courses_array": []
         },
@@ -99,6 +99,11 @@ const data = `{
           "name_array": [ "Probabilidades y Estadísticas", "Probabilidades" ],
           "dept_array": [ "MA" ],
           "courses_array": [ "MA3403", "MA3401" ]
+        },
+        "40": {
+          "name_array": "Equivalencia de requisitos",
+          "dept_array": [],
+          "courses_array": []
         }
       }
     },
@@ -250,7 +255,33 @@ const data = `{
         "ucampus": [ "ME" ],
         "courses": [ "ME" ]
       },
-      "xattr": {}
+      "xattr": {
+        "40": {
+          "name_array": [ "Equivalencia de requisitos" ],
+          "dept_array": [],
+          "courses_array": []
+        },
+        "41": {
+          "name_array": ["IN3141/MA3403/MA3401"],
+          "dept_array": ["IN", "MA"],
+          "courses_array": ["IN3141", "XA0037"]
+        },
+        "42": {
+          "name_array": ["IN3171/IQ3111/MA3701"],
+          "dept_array": ["IN", "IQ", "MA"],
+          "courses_array": ["XA0033", "IQ3111"]
+        },
+        "43": {
+          "name_array": ["IN3242/MA3403"],
+          "dept_array": ["IN", "MA"],
+          "courses_array": ["IN3242", "MA3403"]
+        },
+        "44": {
+          "name_array": ["ME4110/ME4130/ME4140/ME4150/ME4160"],
+          "dept_array": ["ME"],
+          "courses_array": ["ME4110", "ME4130", "ME4140", "ME4150", "ME4160"]
+        }
+      }
     },
     "23": {
       "name": "Departamento de Ingeniería de Minas",
