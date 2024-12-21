@@ -46,8 +46,10 @@ https://malla-api.uch.osec.cl
     * `dcc` para Ingeniería Civil en Computación.
     * ... WIP el resto de las carreras.
   * `<ver>` es la versión de la malla.
-    * `v5` para 2007-2018 (WIP).
-    * `v7` para 2019-today.
+    * `v1` para ????-2000 (WIP).
+    * `v2` para 2001-2006 (WIP).
+    * `v3` para 2007-2018 (WIP).
+    * `v5` para 2019-today.
   * `<degree>` es el título que emite la facultad.
     * `licenciatura` para los primeros 4 semestres.
     * `especialidad` para el resto de los semestres.
@@ -112,17 +114,19 @@ Desglozando XA0011 se tiene:
 
 * `XA 00` -> Wildcard
   * `XA 00 10` -> Formación Integral
-    * `XA 00 11` -> DR/EH/FG/EI/FT
-    * `XA 00 12` -> EH/FG
-    * `XA 00 13` -> Formación Integral Especialidad
+    * `XA 00 11` -> Plan Común (DR/EH/FG/EI/FT)
+    * `XA 00 12` -> Licenciatura (EH/FG)
+    * `XA 00 13` -> Especialidad
   * `XA 00 20` -> Electivo
     * `XA 00 21` -> Electivo Licenciatura
     * `XA 00 22` -> Electivo Especialidad
     * `XA 00 23` -> Electivo de Línea de Especialización (DIE, DIM)
     * `XA 00 24` -> Especialización (DII)
-  * `XA 00 30` -> Equivalencias
+  * `XA 00 30` -> Equivalencias de desbloqueos
     * `XA 00 31` -> Termodinámica / Termodinámica Química
     * `XA 00 32` -> `XA 05 01`
+    * ...
+  * `XA 00 40` -> Equivalencias de requisitos
     * ...
 * `XA 01` -> Requisitos de créditos (Base-36)
   * `XA 01 1C` ->  40 créditos aprobados
