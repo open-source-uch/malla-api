@@ -1,0 +1,23 @@
+{
+  "metadata": {
+    "name": "Geología",
+    "site": "https://geologia.uchile.cl/pregrado/geologia",
+    "comment": "It only lists the courses and does not show relationships."
+  },
+  "version": {
+    "v3": {
+      "semesters": 7,
+      "degrees": [
+        "licenciatura",
+        "especialidad"
+      ]
+    },
+    "v5": {
+      "semesters": 7,
+      "degrees": [
+        "licenciatura",
+        "especialidad"
+      ]
+    }
+  }
+}
