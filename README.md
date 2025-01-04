@@ -2,6 +2,12 @@
 
 Unofficial API para mallas de cursos en Beauchef.
 
+> [!IMPORTANT]
+> El trabajo ha sido separado en los siguientes repositorios:
+> * [**Data**](https://github.com/open-source-uch/malla-api-data) para las mallas como JSON.
+> * [**Frontend**](https://github.com/open-source-uch/malla-api-frontend) para el editor de mallas.
+> * [**Backend**](https://github.com/open-source-uch/malla-api-backend) para el servidor de la API.
+
 ## API
 
 La dirección oficial:
